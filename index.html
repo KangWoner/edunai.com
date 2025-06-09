@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Edu n AI.com - AI 기반 차세대 교육 플랫폼 개발 가이드. 지혜로운 연결로 미래 교육 웹앱을 성공적으로 구축하는 완벽한 로드맵을 제공합니다.">
+    <meta name="keywords" content="Edu n AI, 교육 플랫폼, AI 교육, 웹앱 개발, 워드프레스, 커뮤니티, 온라인 교육">
+    <meta name="author" content="Edu n AI">
+    <meta property="og:title" content="Edu n AI - 지혜로운 연결로 미래 교육을 디자인하다">
+    <meta property="og:description" content="AI 기반 교육 플랫폼 개발을 위한 완벽한 실행 가이드">
+    <meta property="og:url" content="https://edunai.com">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://edunai.com">
+    <title>Edu n AI - 지혜로운 연결로 미래 교육을 디자인하다</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Malgun Gothic', Arial, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #9b59b6 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .logo-section {
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .logo-edu {
+            color: #f1c40f;
+        }
+
+        .logo-n {
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .logo-ai {
+            color: #e74c3c;
+        }
+
+        .logo-tagline {
+            font-size: 1rem;
+            opacity: 0.8;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 900px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out 0.4s both;
+            line-height: 1.6;
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            min-height: 100vh;
+        }
+
+        .intro-section {
+            padding: 80px 0;
+            background: linear-gradient(45deg, #f8f9ff 0%, #fff5f5 100%);
+            text-align: center;
+        }
+
+        .intro-section h2 {
+            font-size: 2.5rem;
+            color: #4a5568;
+            margin-bottom: 30px;
+        }
+
+        .intro-section p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        /* Table of Contents */
+        .toc-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 0 auto;
+            border: 1px solid #e2e8f0;
+        }
+
+        .toc-container h3 {
+            text-align: center;
+            color: #2d3748;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            background: #f8fafc;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #4a5568;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .toc-item:hover {
+            background: linear-gradient(135deg, #3498db 0%, #9b59b6 100%);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(52, 152, 219, 0.3);
+        }
+
+        .toc-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #3498db;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1rem;
+        }
+
+        .toc-item:hover .toc-number {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .toc-text {
+            font-weight: 600;
+        }
+
+        /* Steps */
+        .steps-container {
+            padding: 80px 0;
+        }
+
+        .step {
+            margin-bottom: 100px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .step.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #3498db 0%, #9b59b6 100%);
+            border-radius: 20px;
+            color: white;
+            box-shadow: 0 20px 40px rgba(52, 152, 219, 0.3);
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-right: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .step-title {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .step-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+
+        .subsection {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f8fafc;
+            border-radius: 15px;
+            border-left: 5px solid #3498db;
+        }
+
+        .subsection h4 {
+            color: #2d3748;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .subsection p, .subsection ul {
+            color: #4a5568;
+            font-size: 1rem;
+        }
+
+        .subsection ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .subsection li {
+            margin-bottom: 8px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            color: #2d3748;
+            border: 1px solid #fdcb6e;
+        }
+
+        .highlight-box strong {
+            color: #e17055;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 3rem;
+            }
+
+            .header .subtitle {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+
+            .logo-tagline {
+                font-size: 0.9rem;
+                letter-spacing: 1px;
+            }
+
+            .step-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .step-title {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+                align-items: flex-start;
+                padding-left: 60px;
+            }
+
+            .timeline-item:nth-child(odd) {
+                flex-direction: column !important;
+            }
+
+            .timeline-date {
+                position: absolute;
+                left: 0;
+                top: 20px;
+                flex: none;
+                width: 60px;
+                font-size: 0.8rem;
+                padding: 5px;
+            }
+
+            .timeline-content {
+                margin: 0;
+                width: 100%;
+            }
+
+            .risk-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .metric-card {
+                padding: 30px 15px;
+            }
+
+            .metric-number {
+                font-size: 2.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-primary, .cta-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .toc-container {
+                padding: 30px 20px;
+            }
+
+            .toc-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .toc-item {
+                padding: 12px 15px;
+            }
+
+            .toc-number {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+                margin-right: 12px;
+            }
+
+            .toc-text {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header .subtitle {
+                font-size: 0.95rem;
+            }
+
+            .logo-tagline {
+                font-size: 0.8rem;
+                letter-spacing: 0.5px;
+            }
+
+            .intro-section h2 {
+                font-size: 2rem;
+            }
+
+            .timeline-section h2,
+            .resources-section h2,
+            .risk-section h2,
+            .metrics-section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #4caf50, #ff6b35);
+            transition: width 0.3s ease;
+            z-index: 1000;
+        }
+
+        /* Interactive Elements */
+        .step-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        /* Additional Sections */
+        .resources-section {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .resources-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 60px;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .resource-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .resource-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .resource-card h3 {
+            font-size: 1.5rem;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .resource-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .resource-card li {
+            padding: 8px 0;
+            color: #4a5568;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .resource-card li:last-child {
+            border-bottom: none;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .timeline-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 60px;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #4caf50 0%, #ff6b35 100%);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-date {
+            flex: 0 0 120px;
+            text-align: center;
+            font-weight: bold;
+            color: #4caf50;
+            background: white;
+            padding: 10px;
+            border-radius: 20px;
+            border: 3px solid #4caf50;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 0 40px;
+            border-left: 5px solid #4caf50;
+        }
+
+        .timeline-content h3 {
+            color: #2d3748;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .timeline-content p {
+            color: #4a5568;
+            margin: 0;
+        }
+
+        /* Risk Management Section */
+        .risk-section {
+            padding: 80px 0;
+            background: #f1f5f9;
+        }
+
+        .risk-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 60px;
+        }
+
+        .risk-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .risk-item {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-left: 8px solid;
+        }
+
+        .high-risk {
+            border-left-color: #ef4444;
+        }
+
+        .medium-risk {
+            border-left-color: #f59e0b;
+        }
+
+        .low-risk {
+            border-left-color: #10b981;
+        }
+
+        .risk-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .risk-content h4 {
+            color: #2d3748;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .risk-content p {
+            color: #4a5568;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        /* Success Metrics Section */
+        .metrics-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #4caf50 0%, #ff6b35 100%);
+            color: white;
+        }
+
+        .metrics-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .metric-card {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: scale(1.05);
+        }
+
+        .metric-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ffeb3b;
+        }
+
+        .metric-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .completion-section {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .completion-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .completion-section p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-primary, .cta-secondary {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 200px;
+        }
+
+        .cta-primary {
+            background: linear-gradient(45deg, #4caf50, #ff6b35);
+            color: white;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4);
+        }
+
+        .cta-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .footer-info {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            opacity: 0.8;
+        }
+
+        .footer-info p {
+            margin: 5px 0;
+            font-size: 1rem;
+        }
+
+        .footer-info strong {
+            color: #ffeb3b;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="logo-section">
+                <h1><span class="logo-edu">Edu</span><span class="logo-n"> n </span><span class="logo-ai">AI</span></h1>
+                <div class="logo-tagline">Education × AI = Future</div>
+            </div>
+            <p class="subtitle">지혜로운 연결로 미래 교육을 디자인하다<br>AI 기반 교육 플랫폼 개발을 위한 완벽한 실행 가이드</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="intro-section">
+            <div class="container">
+                <h2>Edu n AI 플랫폼 구축 가이드</h2>
+                <p>교육과 AI의 혁신적 결합을 통해 차세대 학습 경험을 제공하는 플랫폼을 구축하기 위한 완벽한 로드맵입니다. 각 단계를 체계적으로 따라가며 성공적인 교육 웹앱을 만들어보세요.</p>
+                
+                <!-- Table of Contents -->
+                <div class="toc-container">
+                    <h3>📚 Edu n AI 개발 로드맵</h3>
+                    <div class="toc-grid">
+                        <a href="#step1" class="toc-item">
+                            <span class="toc-number">1</span>
+                            <span class="toc-text">팀 구성 & 프로젝트 관리</span>
+                        </a>
+                        <a href="#step2" class="toc-item">
+                            <span class="toc-number">2</span>
+                            <span class="toc-text">기술 인프라 & 호스팅</span>
+                        </a>
+                        <a href="#step3" class="toc-item">
+                            <span class="toc-number">3</span>
+                            <span class="toc-text">플랫폼 개발 & AI 통합</span>
+                        </a>
+                        <a href="#step4" class="toc-item">
+                            <span class="toc-number">4</span>
+                            <span class="toc-text">교육 콘텐츠 & 커리큘럼</span>
+                        </a>
+                        <a href="#step5" class="toc-item">
+                            <span class="toc-number">5</span>
+                            <span class="toc-text">품질 보증 & 테스트</span>
+                        </a>
+                        <a href="#step6" class="toc-item">
+                            <span class="toc-number">6</span>
+                            <span class="toc-text">런칭 & 마케팅 전략</span>
+                        </a>
+                        <a href="#resources" class="toc-item">
+                            <span class="toc-number">🛠️</span>
+                            <span class="toc-text">개발 도구 & 리소스</span>
+                        </a>
+                        <a href="#timeline" class="toc-item">
+                            <span class="toc-number">📅</span>
+                            <span class="toc-text">개발 일정표</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="steps-container">
+            <div class="container">
+                <!-- Step 1 -->
+                <div class="step" id="step1">
+                    <div class="step-header">
+                        <div class="step-number">1</div>
+                        <div class="step-title">팀 구성 & 프로젝트 관리 체계 구축</div>
+                    </div>
+                    <div class="step-content">
+                        <div class="subsection">
+                            <h4>🎯 프로젝트 매니저 (Edu n AI 총괄)</h4>
+                            <p>Edu n AI 플랫폼의 전반적인 진행 상황을 관리하고, 교육과 AI 기술 팀 간의 조율을 담당하며, 최종 의사 결정을 내릴 리더를 명확히 합니다.</p>
+                        </div>
+
+                        <div class="subsection">
+                            <h4>💻 기술 개발팀 (워드프레스 + AI 전문가)</h4>
+                            <p><strong>내부 개발팀:</strong> 워드프레스 기반 LMS 구축, AI 에이전트 통합, 교육 플랫폼 특화 기능 개발을 담당할 전문 인력을 확보합니다.</p>
+                            <p><strong>외부 협력:</strong> 내부 역량이 부족하다면, 교육 플랫폼 전문 개발사나 AI 기술 컨설팅 업체와 파트너십을 구성합니다.</p>
+                        </div>
+
+                        <div class="subsection">
+                            <h4>📚 교육 콘텐츠 & 커리큘럼 팀</h4>
+                            <ul>
+                                <li><strong>교육 전문가:</strong> AI 활용 교육 커리큘럼 설계, 학습자 여정(Learning Journey) 기획</li>
+                                <li><strong>콘텐츠 크리에이터:</strong> 인터랙티브 학습 콘텐츠, 멀티미디어 교육 자료 제작</li>
+                                <li><strong>AI 튜터 트레이너:</strong> AI 학습 도우미의 응답 품질 관리 및 지속적 학습 데이터 구축</li>
+                                <li><strong>커뮤니티 매니저:</strong> 학습자 커뮤니티 운영, 멘토링 프로그램 관리</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">2</div>
+                        <div class="step-title">기술 인프라 준비 (워드프레스 기반)</div>
+                    </div>
+                    <div class="step-content">
+                        <div class="subsection">
+                            <h4>🌐 웹 호스팅 선정 및 구매</h4>
+                            <p>커뮤니티 웹앱은 트래픽과 데이터베이스 사용량이 많을 수 있으므로, 충분한 성능과 안정성을 보장하는 호스팅 서비스를 선택해야 합니다.</p>
+                            
+                            <div class="highlight-box">
+                                <strong>고려사항:</strong> 서버 위치, 트래픽 용량, 디스크 공간, MySQL 데이터베이스 성능, CDN 지원 여부, 보안 기능, 고객 지원 서비스
+                            </div>
+
+                            <p><strong>추천 호스팅:</strong></p>
+                            <ul>
+                                <li>국내: 카페24, 가비아, 호스팅케이알</li>
+                                <li>해외: SiteGround, Bluehost, Kinsta(워드프레스 전용)</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection">
+                            <h4>🔒 기본 설정</h4>
+                            <ul>
+                                <li><strong>도메인 구매:</strong> 웹앱의 주소가 될 도메인 구매</li>
+                                <li><strong>워드프레스 설치:</strong> 원클릭 워드프레스 설치 기능 활용</li>
+                                <li><strong>SSL 인증서 적용:</strong> 웹사이트 보안과 SEO를 위한 HTTPS 적용</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">3</div>
+                        <div class="step-title">워드프레스 테마 및 플러그인 구현</div>
+                    </div>
+                    <div class="step-content">
+                        <div class="subsection">
+                            <h4>🎨 테마 설치 및 커스터마이징</h4>
+                            <p>BuddyBoss 또는 LearnPress, EduPrime 등 커뮤니티/교육 특화 워드프레스 테마를 설치하고, "따뜻하고 세련된" 분위기에 맞춰 커스터마이징합니다.</p>
+                            <ul>
+                                <li>로고, 색상 팔레트, 폰트, 이미지 적용</li>
+                                <li>메인 페이지 구성 및 직관적인 내비게이션 구현</li>
+                                <li>사용자 편의성 기능(텍스트 크기 조절 등) 적용</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection">
+                            <h4>🔌 핵심 플러그인 설치 및 설정</h4>
+                            <ul>
+                                <li><strong>BuddyPress:</strong> 회원 프로필, 활동 피드, 그룹, 친구 기능</li>
+                                <li><strong>bbPress:</strong> 질의응답, 노하우 공유, 아이디어 마켓플레이스 게시판</li>
+                                <li><strong>Elementor:</strong> 복잡한 레이아웃 페이지 디자인</li>
+                                <li><strong>LearnPress/LearnDash:</strong> AI & 디지털 교육, 창업 기초 강의 LMS</li>
+                                <li><strong>GamiPress:</strong> 게이미피케이션 요소(포인트, 뱃지, 등급)</li>
+                                <li><strong>WPForms:</strong> 웨비나 신청, 멘토링 신청, 문의 폼</li>
+                                <li><strong>MailPoet:</strong> 뉴스레터 발행 시스템</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection">
+                            <h4>🤖 초기 AI 에이전트 기능 연동</h4>
+                            <p><strong>콘텐츠 검열 AI:</strong> 댓글/게시물 필터링 플러그인을 활용한 욕설/비방어 필터링</p>
+                            <p><strong>AI 챗봇:</strong> FAQ 데이터를 학습한 기본적인 질의응답 시스템</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">4</div>
+                        <div class="step-title">콘텐츠 제작 및 업로드</div>
+                    </div>
+                    <div class="step-content">
+                        <div class="subsection">
+                            <h4>📚 필수 초기 콘텐츠 제작</h4>
+                            <ul>
+                                <li>아티클 작성</li>
+                                <li>튜토리얼 영상 촬영/편집</li>
+                                <li>인포그래픽/워크북 디자인</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection">
+                            <h4>📤 콘텐츠 업로드</h4>
+                            <p>제작된 콘텐츠를 각 워드프레스 페이지, 게시판, LMS 과정 등에 업로드합니다.</p>
+                        </div>
+
+                        <div class="subsection">
+                            <h4>📋 커뮤니티 가이드라인 게시</h4>
+                            <p>'각 세대별 성토의 장'을 포함한 모든 커뮤니티 활동의 가이드라인을 명확하게 웹앱 내에 게시하고, 사용자들이 쉽게 접근할 수 있도록 합니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">5</div>
+                        <div class="step-title">내부 테스트 및 최종 점검</div>
+                    </div>
+                    <div class="step-content">
+                        <div class="subsection">
+                            <h4>🧪 기능 테스트</h4>
+                            <p>모든 워드프레스 플러그인과 커스텀 기능이 의도대로 작동하는지 철저히 테스트합니다.</p>
+                            <ul>
+                                <li>회원 가입, 로그인</li>
+                                <li>게시물 작성, 댓글</li>
+                                <li>그룹 생성, 학습 진도</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection">
+                            <h4>👥 사용자 경험(UX) 테스트</h4>
+                            <ul>
+                                <li>다양한 기기(PC, 모바일)와 브라우저 호환성</li>
+                                <li>직관적인 내비게이션</li>
+                                <li>사용자 편의성 기능 작동 확인</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection">
+                            <h4>🔐 보안 테스트</h4>
+                            <p>간단한 취약점 점검을 수행하고, 보안 플러그인이 올바르게 작동하는지 확인합니다.</p>
+                        </div>
+
+                        <div class="subsection">
+                            <h4>🎯 시드 그룹 베타 테스트</h4>
+                            <p>론칭 전 시드 그룹에 웹앱을 미리 오픈하여 실제 사용해보게 하고, 피드백을 수렴하여 최종 수정/보완 작업을 진행합니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">6</div>
+                        <div class="step-title">웹앱 론칭 및 초기 홍보</div>
+                    </div>
+                    <div class="step-content">
+                        <div class="subsection">
+                            <h4>🚀 최종 점검 후 론칭</h4>
+                            <p>모든 테스트를 완료하고 버그를 수정한 후, 웹앱을 정식으로 공개 론칭합니다.</p>
+                        </div>
+
+                        <div class="subsection">
+                            <h4>📢 초기 회원 모집을 위한 홍보 실행</h4>
+                            <p><strong>숏폼 콘텐츠(쇼츠) 배포:</strong></p>
+                            <ul>
+                                <li>미리 제작한 4가지 주제별 쇼츠를 유튜브 쇼츠, 인스타그램 릴스, 틱톡 등에 집중적으로 업로드</li>
+                                <li>광고 캠페인 시작</li>
+                            </ul>
+
+                            <p><strong>온라인 커뮤니티 협력:</strong></p>
+                            <p>목표로 하는 각 페르소나의 온라인 커뮤니티와 협력하여 웹앱 론칭 소식을 알리고 쇼츠를 공유합니다.</p>
+
+                            <p><strong>뉴스레터 발송:</strong></p>
+                            <p>초기 구독자 및 잠재 사용자들에게 웹앱 론칭 소식과 핵심 가치를 담은 뉴스레터를 발송합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Resources Section -->
+        <section class="resources-section">
+            <div class="container">
+                <h2>추가 리소스 및 도구</h2>
+                
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-icon">💻</div>
+                        <h3>개발 도구</h3>
+                        <ul>
+                            <li>Visual Studio Code (코드 에디터)</li>
+                            <li>FileZilla (FTP 클라이언트)</li>
+                            <li>Figma (UI/UX 디자인)</li>
+                            <li>Canva (그래픽 디자인)</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-icon">📊</div>
+                        <h3>분석 도구</h3>
+                        <ul>
+                            <li>Google Analytics (웹사이트 분석)</li>
+                            <li>Google Search Console (SEO)</li>
+                            <li>Hotjar (사용자 행동 분석)</li>
+                            <li>GTmetrix (속도 측정)</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-icon">🔧</div>
+                        <h3>관리 도구</h3>
+                        <ul>
+                            <li>Trello/Asana (프로젝트 관리)</li>
+                            <li>Slack (팀 커뮤니케이션)</li>
+                            <li>UpdraftPlus (백업)</li>
+                            <li>Wordfence (보안)</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-icon">💰</div>
+                        <h3>예상 비용</h3>
+                        <ul>
+                            <li>호스팅: 월 10-50만원</li>
+                            <li>도메인: 연 1-5만원</li>
+                            <li>테마/플러그인: 50-200만원</li>
+                            <li>개발비: 500-2000만원</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="timeline-section">
+            <div class="container">
+                <h2>개발 일정 및 마일스톤</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Week 1-2</div>
+                        <div class="timeline-content">
+                            <h3>프로젝트 계획 및 팀 구성</h3>
+                            <p>팀 구성 완료, 역할 분담, 상세 기획 검토</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Week 3-4</div>
+                        <div class="timeline-content">
+                            <h3>인프라 구축</h3>
+                            <p>호스팅 설정, 도메인 연결, 기본 워드프레스 설치</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Week 5-8</div>
+                        <div class="timeline-content">
+                            <h3>핵심 개발</h3>
+                            <p>테마 커스터마이징, 플러그인 설치 및 설정</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Week 9-10</div>
+                        <div class="timeline-content">
+                            <h3>콘텐츠 제작</h3>
+                            <p>초기 콘텐츠 제작 및 업로드</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Week 11-12</div>
+                        <div class="timeline-content">
+                            <h3>테스트 및 최적화</h3>
+                            <p>기능 테스트, 성능 최적화, 버그 수정</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Week 13-14</div>
+                        <div class="timeline-content">
+                            <h3>론칭 준비</h3>
+                            <p>베타 테스트, 마케팅 준비, 최종 점검</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Week 15</div>
+                        <div class="timeline-content">
+                            <h3>공식 론칭</h3>
+                            <p>웹앱 공개, 홍보 활동 시작</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Risk Management Section -->
+        <section class="risk-section">
+            <div class="container">
+                <h2>위험 요소 및 대응 방안</h2>
+                
+                <div class="risk-grid">
+                    <div class="risk-item high-risk">
+                        <h3>🔴 높은 위험</h3>
+                        <div class="risk-content">
+                            <h4>기술적 복잡성</h4>
+                            <p><strong>위험:</strong> 워드프레스 커스터마이징의 기술적 어려움</p>
+                            <p><strong>대응:</strong> 경험 있는 개발자 확보, 단계별 테스트 진행</p>
+                        </div>
+                    </div>
+
+                    <div class="risk-item medium-risk">
+                        <h3>🟡 중간 위험</h3>
+                        <div class="risk-content">
+                            <h4>일정 지연</h4>
+                            <p><strong>위험:</strong> 예상보다 긴 개발 시간</p>
+                            <p><strong>대응:</strong> 버퍼 시간 확보, 우선순위 기능 분리</p>
+                        </div>
+                    </div>
+
+                    <div class="risk-item low-risk">
+                        <h3>🟢 낮은 위험</h3>
+                        <div class="risk-content">
+                            <h4>콘텐츠 품질</h4>
+                            <p><strong>위험:</strong> 초기 콘텐츠 부족</p>
+                            <p><strong>대응:</strong> 전문가 네트워크 활용, 단계적 콘텐츠 확충</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Metrics Section -->
+        <section class="metrics-section">
+            <div class="container">
+                <h2>성공 지표 (KPI)</h2>
+                
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-number">1,000+</div>
+                        <div class="metric-label">첫 달 회원 가입</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-number">500+</div>
+                        <div class="metric-label">월 활성 사용자</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-number">100+</div>
+                        <div class="metric-label">일일 게시물</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-number">80%</div>
+                        <div class="metric-label">사용자 만족도</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="completion-section">
+            <div class="container">
+                <h2>Edu n AI 플랫폼, 교육의 미래를 열다</h2>
+                <p>이 종합 가이드를 통해 교육과 AI가 융합된 혁신적인 'Edu n AI' 플랫폼을 성공적으로 구축하고 론칭할 수 있습니다. 각 단계를 체계적으로 따라가며 차세대 교육 플랫폼을 만들어보세요.</p>
+                
+                <div class="cta-buttons">
+                    <button class="cta-primary" onclick="window.scrollTo(0, 0)">🚀 Edu n AI 개발 시작하기</button>
+                    <button class="cta-secondary" onclick="window.print()">📄 가이드북 다운로드</button>
+                </div>
+
+                <div class="footer-info">
+                    <p><strong>Edu n AI.com</strong> - Education × AI = Future</p>
+                    <p>지혜로운 연결로 미래 교육을 디자인합니다</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+
+        // Animate steps on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.step').forEach(step => {
+            observer.observe(step);
+        });
+
+        // Animate resource cards
+        document.querySelectorAll('.resource-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Animate timeline items
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            observer.observe(item);
+        });
+
+        // Animate risk items
+        document.querySelectorAll('.risk-item').forEach(item => {
+            observer.observe(item);
+        });
+
+        // Animate metric cards with counter effect
+        const animateCounter = (element, target) => {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                
+                if (target.toString().includes('%')) {
+                    element.textContent = Math.floor(current) + '%';
+                } else if (target.toString().includes('+')) {
+                    element.textContent = Math.floor(current).toLocaleString() + '+';
+                } else if (target >= 1000) {
+                    element.textContent = Math.floor(current).toLocaleString() + '+';
+                } else {
+                    element.textContent = current.toFixed(1) + '+';
+                }
+            }, 20);
+        };
+
+        const metricObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const numberElement = entry.target.querySelector('.metric-number');
+                    const text = numberElement.textContent;
+                    let target;
+                    
+                    if (text.includes('%')) {
+                        target = parseFloat(text.replace('%', ''));
+                    } else if (text.includes('+')) {
+                        target = parseFloat(text.replace(/[+,]/g, ''));
+                    } else {
+                        target = parseFloat(text.replace(/[,]/g, ''));
+                    }
+                    
+                    animateCounter(numberElement, target);
+                    metricObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.metric-card').forEach(card => {
+            metricObserver.observe(card);
+        });
+
+        // Smooth scrolling for better UX
+        document.documentElement.style.scrollBehavior = 'smooth';
+
+        // Add click effects to resource cards
+        document.querySelectorAll('.resource-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'translateY(-10px)';
+                }, 150);
+            });
+        });
+
+        // Add floating animation to step numbers
+        document.querySelectorAll('.step-number').forEach(number => {
+            number.style.animation = 'float 3s ease-in-out infinite';
+        });
+
+        // Add CSS for floating animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+            }
+            
+            .visible {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown') {
+                window.scrollBy(0, 100);
+            } else if (e.key === 'ArrowUp') {
+                window.scrollBy(0, -100);
+            } else if (e.key === 'Home') {
+                window.scrollTo(0, 0);
+            } else if (e.key === 'End') {
+                window.scrollTo(0, document.body.scrollHeight);
+            }
+        });
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease-in-out';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Add print styling
+        const printStyles = `
+            @media print {
+                .progress-bar { display: none !important; }
+                .cta-buttons { display: none !important; }
+                .step-content:hover { transform: none !important; }
+                body { background: white !important; }
+                .header { background: #3498db !important; -webkit-print-color-adjust: exact; }
+                .metrics-section { background: #3498db !important; -webkit-print-color-adjust: exact; }
+            }
+        `;
+        
+        const printStyleSheet = document.createElement('style');
+        printStyleSheet.textContent = printStyles;
+        document.head.appendChild(printStyleSheet);
+    </script>
+</body>
+</html>
